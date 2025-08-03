@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
-
 @theme {
-  --primary-color: #4a90e2;
-  --secondary-color: #50e3c2;
-  --accent-color: #f5a623;
-  --error-color: #d0021b;
-  --success-color: #7ed321;
-  --warning-color: #f8e71c;
-  --info-color: #9013fe;
-  --background-color: #f5f7fa;
-  --text-color: #333;
-  --font-family: 'Arial', sans-serif;
-  --border-radius: 8px;
-  --transition-duration: 0.3s;
+  --color-primary: #236ce3;
+  --color-secondary: #242021;
+  --color-lightblue: #d0e1ff;
+  --color-paragraph: #666364;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --default-font-family: Prompt, sans-serif
+}
+
+:root {
+  --color-backgroundImage: linear-gradient(to right, #236ce3, #d0e1ff);
+}
+
+.font-redRose {
+  font-family: "Red Rose", serif;
 }
 
 [data-theme="light"] {
@@ -22,25 +24,51 @@
 }
 
 [data-theme="dark"] {
-  --background: #121212;
-  --foreground: #ffffff;
+  --color-lightblue: #09122C;
+  --color-secondary: #ffffff;
+  --color-black: #fff;
+  --color-paragraph: #E2DFD0;
 }
 
 [data-theme="colorfull"] {
-  --background: #ffeb3b;
-  --foreground: #3f51b5;
+  --color-lightblue: #7ADAA5;
+  --color-primary: #379237;
+  --color-paragraph: #000000c4;
+  --color-backgroundImage: linear-gradient(to bottom, #379237, #7ADAA5);
 }
 
-.theme-option {
-  padding: 10px;
-  border-radius: var(--border-radius);
-  background-color: var(--primary-color);
+body {
+  background-color: var(--color-lightblue);
   color: var(--foreground);
-  cursor: pointer;
   transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .theme-options {
   display: flex;
   gap: 10px;
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  font-family: var(--default-font-family);
+  font-size: 1rem;
+  line-height: 150%;
+  color: var(--color-paragraph);
+}
+
+.main-heading {
+  @apply text-3xl sm:text-4xl lg:text-5xl font-redRose stroke-secondary leading-[118%] font-bold uppercase text-secondary
+}
+
+.main-heading {
+  -webkit-text-stroke-width: 2.37px;
+}
+
+.outlined-text {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-white);
 }
