@@ -5,6 +5,7 @@
   --color-secondary: #242021;
   --color-lightblue: #d0e1ff;
   --color-paragraph: #666364;
+  --color-about: #fff;
   --color-black: #000000;
   --color-white: #ffffff;
   --default-font-family: Prompt, sans-serif
@@ -27,13 +28,14 @@
   --color-lightblue: #09122C;
   --color-secondary: #ffffff;
   --color-black: #fff;
+  --color-about: #000;
   --color-paragraph: #E2DFD0;
 }
 
 [data-theme="colorfull"] {
   --color-lightblue: #7ADAA5;
   --color-primary: #379237;
-  --color-paragraph: #000000c4;
+  --color-paragraph: #000000;
   --color-backgroundImage: linear-gradient(to bottom, #379237, #7ADAA5);
 }
 
@@ -61,7 +63,7 @@ body::-webkit-scrollbar {
 }
 
 .main-heading {
-  @apply text-3xl sm:text-4xl lg:text-5xl font-redRose stroke-secondary leading-[118%] font-bold uppercase text-secondary
+  @apply text-3xl sm:text-4xl lg:text-5xl stroke-secondary leading-[118%] font-bold uppercase text-secondary
 }
 
 .main-heading {

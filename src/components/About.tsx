@@ -1,9 +1,9 @@
-import AboutImg from "../assets/images/webp/about-img.webp";
+import AboutImg from "../assets/images/png/person-glass.png";
 
 const About = () => {
   return (
-    <div className="relative bg-white">
-      <div id="about" className=" max-w-[1140px] mx-auto px-4 lg:py-10">
+    <div className="relative bg-about">
+      <div id="about" className=" max-w-[1140px] mx-auto px-4 lg:py-36">
         <span className="absolute left-0 top-0 hidden xl:block">
           <svg
             width="235"
@@ -17,7 +17,7 @@ const About = () => {
               cy="170.779"
               r="122.168"
               transform="rotate(36.2892 63.7791 170.779)"
-              fill="url(#paint0_linear_10003_243)"
+              className="fill-primary"
             ></circle>
             <path
               opacity="0.2"
@@ -44,8 +44,12 @@ const About = () => {
           </svg>
         </span>
         <div className="flex flex-col lg:flex-row  items-center justify-center lg:justify-between gap-10 lg:gap-5">
-          <div className="max-w-[506px] w-full">
-            <img className="w-full" src={AboutImg} alt="about img" />
+          <div className="max-w-[506px] h-[506px] rounded-full p-8 overflow-hidden w-full bg-primary">
+            <img
+              className="w-full h-full object-cover relative top-8"
+              src={AboutImg}
+              alt="about img"
+            />
           </div>
           <div className="max-w-[554px] w-full relative">
             <span className="hidden lg:block  absolute -top-28 right-10">
@@ -58,14 +62,14 @@ const About = () => {
               >
                 <path
                   d="M254.109 37.2393C254.952 36.3593 256.349 36.3296 257.229 37.173C258.109 38.0164 258.139 39.4135 257.296 40.2935L254.109 37.2393ZM8.3941 133.904C7.21102 134.197 6.01417 133.476 5.72089 132.293L0.941405 113.013C0.648114 111.83 1.36943 110.633 2.55251 110.34C3.73559 110.047 4.93243 110.768 5.22572 111.951L9.47416 129.088L26.6114 124.84C27.7945 124.547 28.9914 125.268 29.2846 126.451C29.5779 127.634 28.8566 128.831 27.6735 129.124L8.3941 133.904ZM257.296 40.2935C244.115 54.046 228.279 67.8787 211.314 79.8568L208.768 76.2509C225.494 64.4417 241.117 50.7953 254.109 37.2393L257.296 40.2935ZM84.1889 34.4617C82.926 35.8655 81.6442 37.2873 80.3432 38.7272L77.0681 35.768C78.367 34.3304 79.6467 32.911 80.9074 31.5096L84.1889 34.4617ZM80.3432 38.7272C54.0263 67.854 29.995 99.3149 9.7533 132.901L5.9728 130.622C26.3811 96.76 50.5897 65.0735 77.0681 35.768L80.3432 38.7272ZM211.314 79.8568C195.55 90.9865 183.117 96.9961 173.23 99.0056C163.228 101.038 155.71 98.9873 150.188 93.9285C144.802 88.9945 141.614 81.4632 139.54 73.1385C137.457 64.7749 136.422 55.2772 135.577 46.1344C134.724 36.915 134.066 28.1088 132.76 20.8466C132.109 17.2277 131.312 14.0893 130.292 11.5441C129.266 8.98587 128.073 7.17729 126.72 6.05308C125.43 4.98178 123.88 4.43148 121.831 4.57752C119.703 4.72921 116.965 5.64257 113.465 7.70745C106.45 11.8461 96.9822 20.2408 84.1889 34.4617L80.9074 31.5096C93.7642 17.2181 103.601 8.40199 111.222 3.90579C115.04 1.65323 118.453 0.393129 121.517 0.174683C124.661 -0.0494262 127.344 0.833434 129.54 2.65791C131.673 4.42948 133.217 6.97931 134.389 9.90136C135.565 12.8365 136.427 16.3004 137.104 20.0651C138.454 27.5699 139.133 36.6557 139.972 45.7279C140.818 54.8767 141.83 64.0701 143.823 72.0716C145.826 80.112 148.744 86.6199 153.169 90.6737C157.458 94.6026 163.456 96.4878 172.351 94.6801C181.359 92.8491 193.202 87.2411 208.768 76.2509L211.314 79.8568Z"
-                  fill="#236CE3"
+                  className="fill-primary"
                 ></path>
               </svg>
             </span>
-            <h2 className="main-heading w-full lg:max-w-[320px] text-center lg:text-start">
+            <h2 className="main-heading font-redRose w-full lg:max-w-[320px] text-center lg:text-start">
               About Xinate, LLC
             </h2>
-            <p className="paragraph !text-secondary pt-5 text-center lg:text-start">
+            <p className="paragraph pt-5 text-center lg:text-start">
               Welcome to Xinate, where innovation meets excellence. Established
               with a vision to redefine industries and elevate experiences,
               Xinate, LLC is a dynamic collective of companies that span diverse

@@ -51,7 +51,7 @@ const Hero = () => {
               <img src={HeroMobileImg} alt="hero image" className="" />
             </div>
             <div
-              className="-right-[15%] max-2xl:-right-[30%] -top-16 max-2xl:-top-6 z-1 rounded-full hidden xl:block absolute h-[937px] w-[937px]"
+              className="-right-[15%] max-2xl:-right-[30%] -top-16 max-2xl:-top-[142px] z-1 rounded-full hidden xl:block absolute h-[937px] w-[937px]"
               style={{ background: "var(--color-backgroundImage)" }}
             >
               {/* Right Content */}
