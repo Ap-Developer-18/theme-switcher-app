@@ -1,34 +1,20 @@
 import { Sun, Moon, Palette } from "lucide-react";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+import type { RootState } from "../redux/store";
+import { setTheme, type Theme } from "../redux/themeSlice";
 
 const ThemeOption = () => {
-  const [theme, setTheme] = useState<"light" | "dark" | "colorfull">("light");
+  const theme = useSelector((state: RootState) => state.theme.value);
+  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
 
-  // Load theme from localStorage
+  // set initial theme on mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem("app-theme") as
-      | "light"
-      | "dark"
-      | "colorfull"
-      | null;
+    document.body.setAttribute("data-theme", theme);
+  }, [theme]);
 
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.body.setAttribute("data-theme", savedTheme);
-    } else {
-      document.body.setAttribute("data-theme", "light");
-    }
-  }, []);
-
-  const applyTheme = (selectedTheme: "light" | "dark" | "colorfull") => {
-    document.body.setAttribute("data-theme", selectedTheme);
-    setTheme(selectedTheme);
-    localStorage.setItem("app-theme", selectedTheme);
-    setOpen(false);
-  };
-
-  const getIcon = (t: typeof theme) => {
+  const getIcon = (t: Theme) => {
     switch (t) {
       case "light":
         return <Sun className="w-5 h-5 text-primary" />;
@@ -41,7 +27,6 @@ const ThemeOption = () => {
 
   return (
     <div className="relative">
-      {/* Trigger Button */}
       <button onClick={() => setOpen((prev) => !prev)}>
         <div className="bg-gradient-to-b from-stone-300/40 to-transparent p-[4px] rounded-[16px]">
           <div className="group p-[4px] rounded-[12px] bg-gradient-to-b from-white to-stone-200/40 shadow-md active:scale-[0.98] transition-all">
@@ -54,7 +39,6 @@ const ThemeOption = () => {
         </div>
       </button>
 
-      {/* Dropdown Menu */}
       <div
         className={`${
           open ? "opacity-100 z-50" : "opacity-0 -z-10"
@@ -63,11 +47,14 @@ const ThemeOption = () => {
         {(["light", "dark", "colorfull"] as const).map((option) => (
           <button
             key={option}
-            onClick={() => applyTheme(option)}
+            onClick={() => {
+              dispatch(setTheme(option));
+              setOpen(false);
+            }}
             className={`p-2 rounded-full hover:bg-gray-200 transition-all ${
               theme === option
                 ? "bg-white"
-                : "w-full bg-[rgba(255,255,255,0.20)] rounded-3xl p-2  hover:-translate-y-1.5 cursor-pointer transition-all duration-200 ease-in-out backdrop-blur-md"
+                : "w-full bg-[rgba(255,255,255,0.20)] rounded-3xl p-2 hover:-translate-y-1.5 cursor-pointer transition-all duration-200 ease-in-out backdrop-blur-md"
             }`}
           >
             {getIcon(option)}
